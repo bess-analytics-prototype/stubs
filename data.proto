@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package mypackage;
+option go_package = "stubs/mypackage";
 
 service BessService {
     rpc ProcessBess(BessRequest) returns (BessResponse);
