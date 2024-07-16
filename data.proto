@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package mypackage;
+
+// Define the BessService with methods for processing Bess data
+service BessService {
+    rpc ProcessBess(BessRequest) returns (BessResponse);
+}
+
+message Data {
+    string timestamp = 1;
+    double voltage = 2;
+    double current = 3;
+}
+
+message Bess {
+    string id = 1;
+    string project = 2;
+    string device = 3;
+    repeated Data data = 4;
+}
+
+message BessRequest {
+    Bess bess = 1;
+}
+
+message BessResponse {
+    string message = 1;
+}
